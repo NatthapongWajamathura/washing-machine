@@ -4,9 +4,9 @@ import img from './img/img1.gif'
 
 function App() {
   const data = [
-    { image: img, label: 'Label for Image 1' },
-    { image: img, label: 'Label for Image 2' },
-    { image: img, label: 'Label for Image 3' }
+    { image: img, label: 'Label for Image 1', status: 1 },
+    { image: img, label: 'Label for Image 2', status: 2},
+    { image: img, label: 'Label for Image 3', status: 1 }
   ];
 
   return (
@@ -17,7 +17,7 @@ function App() {
             <li key={item.image}>
               <div>
                 <img src={item.image} alt={item.label} />
-                <label>{item.label}</label>
+                {item.status == 1 ? <label>ว่าง</label> :<label>กำลังใช้งาน</label>}
               </div>
             </li>
           ))}
